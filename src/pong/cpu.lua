@@ -1,0 +1,3 @@
+local cpu
+
+return cpu
