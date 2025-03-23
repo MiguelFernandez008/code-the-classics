@@ -6,6 +6,9 @@ local gameWidth, gameHeight = 1024, 768
 local windowWidth, windowHeight = love.window.getDesktopDimensions()
 push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = true})
 
+-- CPU
+local cpu = require("cpu")
+
 -- PLAYER
 local player = require("player")
 local player1 = player:new() 
