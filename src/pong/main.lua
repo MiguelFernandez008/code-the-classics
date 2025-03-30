@@ -6,13 +6,8 @@ local scener = require ("scene")
 local scenerHandler = scener:new()
 
 -- ENGINE
-local engine = {
-    width = 1024,
-    height = 768,
-    font,
-    scener,
-    current
-}
+local enginer = require("engine")
+local engine = enginer:new()
 
 -- SCENES
 local menu = require("scenes/menu")
