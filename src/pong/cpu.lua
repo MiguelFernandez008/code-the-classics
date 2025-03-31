@@ -1,3 +1,5 @@
-local cpu
+local cpu = CreateClass()
 
-return cpu
+function cpu:_init()
+
+end

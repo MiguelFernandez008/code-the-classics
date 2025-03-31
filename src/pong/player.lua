@@ -1,10 +1,8 @@
-local player = {x = 100, y= 0}
+local player = CreateClass()
 
-function player:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
+function player:_init()
+    self.x = 100
+    self.y = 0
 end
 
 function  player:moveUp()

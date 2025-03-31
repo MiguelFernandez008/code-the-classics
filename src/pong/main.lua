@@ -1,31 +1,31 @@
 -- PUSH
 local push = require ("./libs/push/push")
 
+-- CLASS CREATE
+require("utils/class")
+
 -- SCENER
-local scener = require ("scene")
-local scenerHandler = scener:new()
+local scenerHandler = require ("scene")
+scenerHandler:_init()
 
 -- ENGINE
-local enginer = require("engine")
-local engine = enginer:new()
+local engine = require("engine")
+engine:_init()
 
 -- SCENES
 local menu = require("scenes/menu")
-local menuScene = menu:new({
-    engine = engine
-})
+menu:_init(engine)
 
 -- WINDOW
 local gameWidth, gameHeight = 1024, 768
 local windowWidth, windowHeight = love.window.getDesktopDimensions()
 push:setupScreen(engine.width, engine.height, windowWidth, windowHeight, {fullscreen = true})
 
--- CPU
-local cpu = require("cpu")
-
 -- PLAYER
 local player = require("player")
-local player1 = player:new() 
+
+-- CPU
+local cpu = require("cpu")
 
 function love.load()
     -- Load font
@@ -33,7 +33,7 @@ function love.load()
     -- Add scener to engine
     engine.scener = scenerHandler
     -- Load first scene into memory
-    engine.scener:push(menuScene)
+    engine.scener:push(menu)
     engine.current = engine.scener:current()
 end
 

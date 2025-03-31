@@ -1,12 +1,7 @@
-local scener = {
-    scenes = {}
-}
+local scener = CreateClass()
 
-function scener:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self    
-    return o
+function scener:_init()
+    self.scenes = {}
 end
 
 function scener:push(scene)
@@ -20,6 +15,9 @@ function scener:push(scene)
 end
 
 function scener:pop()
+    if scene.destroy then
+        scene:destroy()
+    end
    table.remove(self.scenes)
 end
 

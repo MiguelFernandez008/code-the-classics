@@ -1,16 +1,11 @@
-local engine = {
-    width = 1024,
-    height = 768,
-    font,
-    scener,
-    current
-}
+local engine = CreateClass()
 
-function engine:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
+function engine:_init()
+    self.width = 1024
+    self.height = 768
+    self.font = nil
+    self.scener = nil
+    self.current = nil
 end
 
 return engine

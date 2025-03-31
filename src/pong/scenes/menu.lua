@@ -1,13 +1,9 @@
-local menu = {
-    engine = nil
-}
+local scene = require("scenes/base")
 
-function menu:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    self.engine = o.engine
-    return o
+local menu = CreateClass(scene)
+
+function menu:_init(engine)
+    scene._init(self, engine)
 end
 
 function menu:load()
@@ -40,8 +36,8 @@ end
 function menu:keypressed(key)
     if key == "1" then
         local game = require("scenes/game")
-        local gameScene = game:new()
-        self.engine.scener:push(gameScene)
+        game:_init()
+        self.engine.scener:push(game)
     end
 end
 

@@ -1,10 +1,9 @@
-local game = {}
+local scene = require("scenes/base")
 
-function game:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
+local game = CreateClass(scene)
+
+function game:_init(engine)
+    scene._init(self, engine)
 end
 
 function game:load()
