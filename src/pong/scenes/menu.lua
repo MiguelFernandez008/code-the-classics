@@ -35,10 +35,13 @@ end
 
 function menu:keypressed(key)
     if key == "1" then
-        local game = require("scenes/game")
-        game:_init()
+        local newGame = require("scenes/game")
+        local game = newGame()
         self.engine.scener:push(game)
     end
+end
+
+function menu:gamepadpressed(joystick, button)
 end
 
 return menu

@@ -1,5 +1,3 @@
-require("utils/class")
-
 local scene = CreateClass()
 
 function scene:_init(engine)
@@ -19,6 +17,9 @@ function scene:destroy()
 end
 
 function scene:keypressed(key)
+end
+
+function scene:gamepadpressed(joystick, button)
 end
 
 return scene

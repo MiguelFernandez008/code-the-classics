@@ -5,11 +5,19 @@ function player:_init()
     self.y = 0
 end
 
-function  player:moveUp()
+function player:moveUp()
     
 end
 
 function player:moveDown()
+    
+end
+
+function player:keypressed(key)
+    
+end
+
+function player:gamepadpressed(joystick, button)
     
 end
 
