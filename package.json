@@ -14,6 +14,6 @@
   "author": "Miguel Fernández",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.3.2"
+    "jsdoc-to-markdown": "^9.1.1"
   }
 }
